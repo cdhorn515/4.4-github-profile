@@ -1,20 +1,57 @@
 *{
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+}
+
+/*-----------Navbar Header--------*/
+
+
+ul li{
+  display: inline-block;
+  text-decoration: none;
+  color: #C8C9C4;
 }
 
 .flex-cont {
   display: flex;
   flex-flow: row nowrap;
+  margin: 40px 50px;
 }
 
 .profile{
   flex-basis: 30%;
 }
 
+
 .repos{
   flex-basis: 65%;
+  margin-left: 20px;
 }
 
+.repoInfoContainer{
+  margin-top: 40px;
+  margin-left: 25px;
+}
 span{
   margin-left: 15px;
 }
+
+.color-circle{
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: #e34626;
+}
+
+header{
+  height: 55px;
+  background-color: #000;
+  width: 100%;
+}
+/*.bio-text{
+  width: 80%;
+}*/

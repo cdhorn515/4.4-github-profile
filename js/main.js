@@ -15,7 +15,7 @@
     }
     var profileSection = document.getElementById('profile');
 
-
+// ***************************profile section
     fetch(usernameUrl, {
       headers: headers
     }).then(function(response) {
@@ -38,7 +38,8 @@
       loginName.textContent = profile.login;
       profileSection.appendChild(loginName);
 
-      var bio = document.createElement('p');
+      var bio = document.createElement('div');
+      // bio.className.add('bio-text');
       bio.innerHTML = profile.bio;
       profileSection.appendChild(bio);
 
@@ -56,7 +57,7 @@
       joined.innerHTML = memberSince;
       profileSection.appendChild(joined);
     }
-
+    // *************************Repository section
     fetch(repoUrl, {
       headers: headers
     }).then(function(res) {
@@ -69,30 +70,45 @@
         }
       });
     });
-
     var repoSection = document.getElementById('repos');
 
     function displayRepo(repo){
-      // var repoList = document.getElementById('repos');
-
-
-      var repoList = document.createElement('div');
-      repoSection.appendChild(repoList);
-
+      // outer container that holds all repo info
       var repoNode = document.createElement('div');
-      repoNode.textContent = repo.name;
-      repoList.appendChild(repoNode);
-
+      repoNode.classList.add('repoInfoContainer');
+      repoSection.appendChild(repoNode);
+      // inner container that hold title of repo which is a link
+      var repoName = document.createElement('div');
+      repoName.classList.add('repo-info');
+      repoNode.appendChild(repoName);
+      // circle beside language
+      var circle = document.createElement('div');
+      circle.classList.add('color-circle');
+      // circle.setAttribute('class', 'color-circle');
+      repoNode.appendChild(circle);
+      // anchor link for title of repo
+      var repoNameLink = document.createElement('a');
+      repoNameLink.href = repo.html_url;
+      repoNameLink.textContent = repo.name;
+      repoName.appendChild(repoNameLink);
+      // language node
       var repoLanguage = document.createElement('span');
       repoLanguage.textContent = repo.language;
-      repoList.appendChild(repoLanguage);
-
+      repoNode.appendChild(repoLanguage);
+      // displayed if there are forked repositories
+      var numOfForks = repo.forks;
+      if (numOfForks > 0) {
+      var forkIcon =  document.createElement('span');
+      document.createElement('span');
+       numOfForks.textContent = ;
+       repoNode.appendChild(numOfForks);
+      }
+      // last update for repository
       var repoUpdate = document.createElement('span');
       var lastUpdate = moment(repo.updated_at).fromNow();
       repoUpdate.textContent = lastUpdate;
-      repoList.appendChild(repoUpdate);
+      repoNode.appendChild(repoUpdate);
      }
-// repoList.appendChild(repoDiv);
 
 
       // repoDiv.innerHTML = `
