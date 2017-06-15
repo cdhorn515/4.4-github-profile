@@ -1,0 +1,20 @@
+*{
+  box-sizing: border-box;
+}
+
+.flex-cont {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.profile{
+  flex-basis: 30%;
+}
+
+.repos{
+  flex-basis: 65%;
+}
+
+span{
+  margin-left: 15px;
+}
