@@ -47,10 +47,18 @@
       location.textContent = profile.location;
       profileSection.appendChild(location);
 
+      var emailSpan = document.createElement('span');
+      profileSection.appendChild(emailSpan);
+
       var email = document.createElement('a');
+      email.setAttribute('class', 'fa fa-envelope-o')
       email.href = profile.email;
-      email.textContent = profile.email
-      profileSection.appendChild(email);
+      email.textContent = profile.email;
+      emailSpan.appendChild(email);
+
+      var faEnvelopeSpan = document.createElement('span');
+      email.setAttribute('class', 'fa fa-envelope-o')
+      profileSection.appendChild(faEnvelopeSpan);
 
       var joined = document.createElement('h5');
       var memberSince = moment(profile.created_at).format('MM Do YYYY');
@@ -96,13 +104,13 @@
       repoLanguage.textContent = repo.language;
       repoNode.appendChild(repoLanguage);
       // displayed if there are forked repositories
-      var numOfForks = repo.forks;
-      if (numOfForks > 0) {
-      var forkIcon =  document.createElement('span');
-      document.createElement('span');
-       numOfForks.textContent = ;
-       repoNode.appendChild(numOfForks);
-      }
+      // var numOfForks = repo.forks;
+      // if (numOfForks > 0) {
+      // var forkIcon =  document.createElement('span');
+      // document.createElement('span');
+      //  numOfForks.textContent = ;
+      //  repoNode.appendChild(numOfForks);
+      // }
       // last update for repository
       var repoUpdate = document.createElement('span');
       var lastUpdate = moment(repo.updated_at).fromNow();

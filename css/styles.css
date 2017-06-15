@@ -26,7 +26,6 @@ ul li{
   flex-basis: 30%;
 }
 
-
 .repos{
   flex-basis: 65%;
   margin-left: 20px;
@@ -35,12 +34,14 @@ ul li{
 .repoInfoContainer{
   margin-top: 40px;
   margin-left: 25px;
+  border-bottom: 1px solid #E1E4E8;
 }
 span{
   margin-left: 15px;
 }
 
 .color-circle{
+  display: inline-block;
   height: 12px;
   width: 12px;
   border-radius: 50%;
