@@ -14,32 +14,26 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
-  <body>
+<body>
   <header class="topnav">
-
     <img src="pics/githublogo.png" alt="githublogo" class="githublogo">
-    <form class="form-inline">
-      <div class="form-group">
-        <label class="sr-only" for="searchbox"></label>
-        <input type="text" class="form-control navbar-search" id="searchbox" placeholder="Search GitHub">
-      </div>
-    </form>
-     <ul id="navlist">
-        <li class="toplinks">Pull requests</li>
-        <li class="toplinks">Issues</li>
-       <li class="toplinks">Marketplace</li>
-       <li class="toplinks">Gist</li>
-        </ul>
-
+    <div class="form-group">
+      <label class="sr-only" for="searchbox"></label>
+      <input type="text" class="form-control navbar-search" id="searchbox" placeholder="Search GitHub">
+    </div>
+    <ul id="navlist">
+      <li class="toplinks">Pull requests</li>
+      <li class="toplinks">Issues</li>
+      <li class="toplinks">Marketplace</li>
+      <li class="toplinks">Gist</li>
+    </ul>
   </header>
-
   <!-- links under header and search box -->
   <section class="main-section">
     <div class="top-search-section">
 
-    </div>
-<div class="search-boxes">
-    <select class="form-inline typeSelect">Type: All
+      <div class="search-boxes">
+        <select class="form-inline typeSelect">Type: All
   <option>All</option>
   <option>Public</option>
   <option>Private</option>
@@ -47,54 +41,42 @@
   <option>Forks</option>
   <option>Mirrors</option>
   </select>
-
-    <select class="form-inline langSelect">Select Language
+        <select class="form-inline langSelect">Select Language
     <option>All</option>
     <option>CSS</option>
     <option>HTML</option>
     <option>JavaScript</option>
     <option>PHP</option>
   </select>
-
-
-    <form class="form-inline reposearch">
-      <div class="form-group">
-        <label for="searchRepos"></label>
-        <input type="text" class="form-control" id="searchRepos" placeholder="Search repositories...">
+        <form class="form-inline reposearch">
+          <div class="form-group">
+            <label for="searchRepos"></label>
+            <input type="text" class="form-control" id="searchRepos" placeholder="Search repositories...">
+          </div>
       </div>
-    </form>
-<ul class="bodylinks">
-  <li>Overview</li>
-  <li>Repositories</li>
-    <span class="shaded">38</span>
-  <li>Stars</li>
-  <span class="shaded">0</span>
-  <li>Followers</li>
-  <span class="shaded">1</span>
-  <li>Following</li>
-  <span class="shaded">0</span>
-</ul>
-</div>
-
-</div>
-
-<div>
-
-</div>
-
-  <div class="flex-cont">
-
-
-    <section class="col-2" id="profile">
-
-    </section>
-    <section class="col-10" id="repos">
-
-
-    </section>
+      </form>
+      <div class="navbar-scroll">
+        <ul class="bodylinks">
+          <li>Overview</li>
+          <li>Repositories</li>
+          <span class="shaded">38</span>
+          <li>Stars</li>
+          <span class="shaded">0</span>
+          <li>Followers</li>
+          <span class="shaded">1</span>
+          <li>Following</li>
+          <span class="shaded">0</span>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="flex-cont">
+      <section class="col-2" id="profile">
       </section>
+      <section class="col-10" id="repos">
+      </section>
+  </section>
   </div>
-
   <footer>
     <span><i class="fa fa-copyright" aria-hidden="true"></i>2017 GitHub, Inc.</span>
     <ul>

@@ -59,6 +59,10 @@ body{
 .search-boxes{
   float: right;
   margin-top: 20px;
+  width: 600px;
+  position: absolute;
+  /*parallax?*/
+  margin: 350px;
 }
 
 .bodylinks{
@@ -69,6 +73,10 @@ body{
 li{
   text-decoration: none;
   display: inline-block;
+}
+
+.navbar-scroll{
+
 }
 /*---container for two flex ---------*/
 .flex-cont {
@@ -87,7 +95,8 @@ li{
   border-radius: 6px;
 }
 
-.repos{
+#repos{
+  margin-top: 100px;
   flex-basis: 65%;
   margin-left: 20px;
 }

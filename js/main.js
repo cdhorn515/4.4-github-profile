@@ -39,6 +39,7 @@
 
       var loginName = document.createElement('h3');
       loginName.textContent = profile.login;
+      loginName.style.fontWeight = 'lighter';
       profileSection.appendChild(loginName);
 
       var bio = document.createElement('div');
