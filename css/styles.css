@@ -27,6 +27,8 @@ body{
   float: left;
   width: 300px;
   margin-top: 10px;
+  background-color: #404347;
+  border: none;
 }
 
 #navlist{
@@ -38,8 +40,13 @@ body{
   color: #C8C9C4;
   text-decoration: none;
   display: inline-block;
+  padding-top: 17px;
 }
-
+.repoicon{
+  height: 16px;
+  width: 12px;
+  background-color: #5CB85C;
+}
 /*--------------------body top search*/
 
 .main-section{
@@ -48,6 +55,7 @@ body{
 }
 .typeSelect, .langSelect{
   float: right;
+  height: 33px;
 }
 
 .reposearchCont{
@@ -73,7 +81,7 @@ body{
   clear: left;
   float: right;
   width: 100%;
-  margin-right: 20px;
+  margin-right: 5px;
 }
 
 .bodylinks{
@@ -190,4 +198,9 @@ header{
 width: 90%;
 border-bottom: 1px solid #E1E4E8;
 padding-bottom: 15px;
+}
+/*-------------footer*/
+
+footer>ul>li{
+  color: #337ab7;
 }
