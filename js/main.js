@@ -29,6 +29,9 @@
       var pic = document.createElement('div');
       pic.innerHTML = '<img src = "' + profile.avatar_url + '">';
       profileSection.appendChild(pic);
+      pic.style.height = "230px";
+      pic.style.width = "230px";
+      pic.style.borderRadius = "5px";
 
       var name = document.createElement('h3');
       name.textContent = profile.name;
@@ -39,19 +42,20 @@
       profileSection.appendChild(loginName);
 
       var bio = document.createElement('div');
-      // bio.className.add('bio-text');
+      bio.setAttribute('class', 'bio-text');
       bio.innerHTML = profile.bio;
       profileSection.appendChild(bio);
 
       var location = document.createElement('h5');
       location.textContent = profile.location;
+      location.setAttribute('class', 'fa fa-map-marker sm');
       profileSection.appendChild(location);
 
-      var emailSpan = document.createElement('span');
+      var emailSpan = document.createElement('p');
       profileSection.appendChild(emailSpan);
 
       var email = document.createElement('a');
-      email.setAttribute('class', 'fa fa-envelope-o')
+      email.setAttribute('class', 'fa fa-envelope-o sm');
       email.href = profile.email;
       email.textContent = profile.email;
       emailSpan.appendChild(email);
@@ -79,7 +83,7 @@
       });
     });
     var repoSection = document.getElementById('repos');
-
+    //display all repos
     function displayRepo(repo){
       // outer container that holds all repo info
       var repoNode = document.createElement('div');
@@ -90,10 +94,28 @@
       repoName.classList.add('repo-info');
       repoNode.appendChild(repoName);
       // circle beside language
-      var circle = document.createElement('div');
-      circle.classList.add('color-circle');
+      var repoLanguage = repo.language;
+
+      var coloredCircle = document.createElement('div');
+      coloredCircle.classList.add('color-circle');
       // circle.setAttribute('class', 'color-circle');
-      repoNode.appendChild(circle);
+      repoNode.appendChild(coloredCircle);
+
+      if (repoLanguage === 'JavaScript'){
+        coloredCircle.style.backgroundColor = '#f1e05a';
+      } else {
+        if (repoLanguage === 'CSS') {
+          coloredCircle.style.backggroundColor = '#563d7c';
+        } else {
+        if (repoLanguage === 'HTML') {
+          coloredCircle.style.backgroundColor = '#563d7c';
+        } else {
+          coloredCircle.style.width = '12px';
+          coloredCircle.style.height = '12px';
+        }
+      }
+    }
+
       // anchor link for title of repo
       var repoNameLink = document.createElement('a');
       repoNameLink.href = repo.html_url;
@@ -101,18 +123,26 @@
       repoName.appendChild(repoNameLink);
       // language node
       var repoLanguage = document.createElement('span');
+      repoLanguage.classList.add('repoLangTxt');
       repoLanguage.textContent = repo.language;
       repoNode.appendChild(repoLanguage);
       // displayed if there are forked repositories
-      // var numOfForks = repo.forks;
-      // if (numOfForks > 0) {
-      // var forkIcon =  document.createElement('span');
-      // document.createElement('span');
-      //  numOfForks.textContent = ;
-      //  repoNode.appendChild(numOfForks);
-      // }
-      // last update for repository
+
+      // var location = document.createElement('h5');
+      // location.textContent = profile.location;
+      // location.setAttribute('class', 'fa fa-map-marker sm');
+      // profileSection.appendChild(location);
+
+      var numOfForks = repo.forks;
+      if (numOfForks > 0) {
+      var forkedNode =  document.createElement('span');
+      forkedNode.setAttribute('class', 'fa fa-code-fork');
+      //  numOfForks.textContent = repo.forks;
+       repoNode.appendChild(forkedNode);
+      }
+      // latest update for repository
       var repoUpdate = document.createElement('span');
+      repoLanguage.classList.add('repoLangTxt')
       var lastUpdate = moment(repo.updated_at).fromNow();
       repoUpdate.textContent = lastUpdate;
       repoNode.appendChild(repoUpdate);

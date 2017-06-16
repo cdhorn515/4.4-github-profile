@@ -12,10 +12,23 @@ body{
 
 ul li{
   display: inline-block;
+  float: left;
   text-decoration: none;
   color: #C8C9C4;
 }
 
+.typeSelect, .langSelect{
+  float: right;
+}
+
+#searchRepos{
+  float: right;
+  width: 380px;
+}
+
+.search-boxes{
+  margin-top: 20px;
+}
 .flex-cont {
   display: flex;
   flex-flow: row nowrap;
@@ -36,6 +49,17 @@ ul li{
   margin-left: 25px;
   border-bottom: 1px solid #E1E4E8;
 }
+
+.repo-info{
+  color: #0366d6;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.repoLangTxt{
+  font-size: 12px;
+  color: #586069;
+}
 span{
   margin-left: 15px;
 }
@@ -53,6 +77,6 @@ header{
   background-color: #000;
   width: 100%;
 }
-/*.bio-text{
-  width: 80%;
-}*/
+.bio-text{
+width: 75%;*/
+}

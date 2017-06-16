@@ -1,36 +1,70 @@
 <!DOCTYPE html>
-<html lang = "en">
-  <head>
-    <meta charset="utf-8">
-    <title>Github Profile</title>
-    <!-- normalize -->
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/7.0.0/normalize.css">
-    <!--font awesome-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- bootstrap -->
+<html lang="en">
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.css">
-  </head>
-  <body>
-    <header>
-      <nav>
-        <i class="fa fa-github" aria-hidden="true"></i>
-        <form class="form-inline">
-  <div class="form-group">
-    <label class="sr-only" for="searchbox"></label>
-    <input type="text" class="form-control" id="searchbox" placeholder="Search GitHub">
-  </div>
+<head>
+  <meta charset="utf-8">
+  <title>Github Profile</title>
+  <!-- normalize -->
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/7.0.0/normalize.css">
+  <!--font awesome-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- bootstrap -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <i class="fa fa-github" aria-hidden="true"></i>
+      <form class="form-inline">
+        <div class="form-group">
+          <label class="sr-only" for="searchbox"></label>
+          <input type="text" class="form-control" id="searchbox" placeholder="Search GitHub">
+        </div>
         <ul>
           <li>Pull requests</li>
           <li>Issues</li>
           <li>Marketplace</li>
           <li>Gist</li>
         </ul>
-      </nav>
-    </header>
-    <!-- <div class = "lang-cir-orange"></div> -->
-    <div class = "flex-cont">
+    </nav>
+  </header>
+  <!-- links under header and search box -->
+  <section>
+<div class="search-boxes">
+    <select class="form-inline typeSelect">Type: All
+  <option>All</option>
+  <option>Public</option>
+  <option>Private</option>
+  <option>Sources</option>
+  <option>Forks</option>
+  <option>Mirrors</option>
+  </select>
+
+    <select class="form-inline langSelect">Select Language
+    <option>All</option>
+    <option>CSS</option>
+    <option>HTML</option>
+    <option>JavaScript</option>
+    <option>PHP</option>
+  </select>
+
+
+    <form class="form-inline reposearch">
+      <div class="form-group">
+        <label for="searchRepos"></label>
+        <input type="text" class="form-control" id="searchRepos" placeholder="Search repositories...">
+      </div>
+    </form>
+</div>
+
+
+  </section>
+
+
+  <div class="flex-cont">
 
 
     <section class="col-2" id="profile">
@@ -40,31 +74,33 @@
 
 
     </section>
-        </div>
+  </div>
 
-    <footer>
-      <span><i class="fa fa-copyright" aria-hidden="true"></i>2017 GitHub, Inc.</span>
-      <ul>
-        <li>Terms</li>
-        <li>Privacy</li>
-        <li>Security</li>
-        <li>Status</li>
-        <li>Help</li>
-      </ul>
-      <span><i class="fa fa-github" aria-hidden="true"></i></span>
-      <ul>
-        <li>Contact Github</li>
-        <li>API</li>
-        <li>Training</li>
-        <li>Shop</li>
-        <li>Blog</li>
-        <li>About</li>
-      </ul>
-    </footer>
-    <script type="text/javascript" src="js/moment.min.js"></script>
-    <script type="text/javascript" src="js/token.js"></script>
-    <script type="text/javascript" src="js/main.js"> </script>
-  </body>
+  <footer>
+    <span><i class="fa fa-copyright" aria-hidden="true"></i>2017 GitHub, Inc.</span>
+    <ul>
+      <li>Terms</li>
+      <li>Privacy</li>
+      <li>Security</li>
+      <li>Status</li>
+      <li>Help</li>
+    </ul>
+    <span><i class="fa fa-github" aria-hidden="true"></i></span>
+    <ul>
+      <li>Contact Github</li>
+      <li>API</li>
+      <li>Training</li>
+      <li>Shop</li>
+      <li>Blog</li>
+      <li>About</li>
+    </ul>
+  </footer>
+  <script type="text/javascript" src="js/moment.min.js"></script>
+  <script type="text/javascript" src="js/token.js"></script>
+  <script type="text/javascript" src="js/main.js">
+  </script>
+</body>
+
 </html>
 <!-- <i class="fa fa-envelope-o" aria-hidden="true"></i> -->
 <!-- <i class="fa fa-code-fork" aria-hidden="true"></i> -->
