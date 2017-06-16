@@ -68,8 +68,8 @@
       profileSection.appendChild(faEnvelopeSpan);
 
       var joined = document.createElement('h5');
-      var memberSince = moment(profile.created_at).format('MM Do YYYY');
-      joined.innerHTML = memberSince;
+      var memberSince = moment(profile.created_at).format('MMMM Do YYYY');
+      joined.innerHTML = 'Created on: ' + memberSince;
       profileSection.appendChild(joined);
     }
     // *************************Repository section

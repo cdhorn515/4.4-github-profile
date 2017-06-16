@@ -120,16 +120,25 @@ li{
   width: 230px;
   border-radius: 6px;
 }
-
+/*-------------organization div*/
 .organization{
   font-size: 18px;
   font-weight: bold;
+  padding-bottom: 10px;
+}
+
+#organizations{
+  border-top: 1px solid #E1E4E8;
+  width: 90%;
 }
 
 .orgavatar>img{
   width: 35px;
   height: 35px;
 }
+
+
+
 /*-------------Col 2 repo list*/
 #repos{
   margin-top: 100px;
@@ -170,7 +179,6 @@ span{
 
 .info-cont{
   margin-bottom: 30px;
-
 }
 
 header{
@@ -179,5 +187,7 @@ header{
   width: 100%;
 }
 .bio-text{
-width: 75%;*/
+width: 90%;
+border-bottom: 1px solid #E1E4E8;
+padding-bottom: 15px;
 }
