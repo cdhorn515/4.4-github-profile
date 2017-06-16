@@ -14,25 +14,30 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body>
-  <header>
-    <nav>
-      <i class="fa fa-github" aria-hidden="true"></i>
-      <form class="form-inline">
-        <div class="form-group">
-          <label class="sr-only" for="searchbox"></label>
-          <input type="text" class="form-control" id="searchbox" placeholder="Search GitHub">
-        </div>
-        <ul>
-          <li>Pull requests</li>
-          <li>Issues</li>
-          <li>Marketplace</li>
-          <li>Gist</li>
+  <body>
+  <header class="topnav">
+
+    <img src="pics/githublogo.png" alt="githublogo" class="githublogo">
+    <form class="form-inline">
+      <div class="form-group">
+        <label class="sr-only" for="searchbox"></label>
+        <input type="text" class="form-control navbar-search" id="searchbox" placeholder="Search GitHub">
+      </div>
+    </form>
+     <ul id="navlist">
+        <li class="toplinks">Pull requests</li>
+        <li class="toplinks">Issues</li>
+       <li class="toplinks">Marketplace</li>
+       <li class="toplinks">Gist</li>
         </ul>
-    </nav>
+
   </header>
+
   <!-- links under header and search box -->
-  <section>
+  <section class="main-section">
+    <div class="top-search-section">
+
+    </div>
 <div class="search-boxes">
     <select class="form-inline typeSelect">Type: All
   <option>All</option>
@@ -58,11 +63,24 @@
         <input type="text" class="form-control" id="searchRepos" placeholder="Search repositories...">
       </div>
     </form>
+<ul class="bodylinks">
+  <li>Overview</li>
+  <li>Repositories</li>
+    <span class="shaded">38</span>
+  <li>Stars</li>
+  <span class="shaded">0</span>
+  <li>Followers</li>
+  <span class="shaded">1</span>
+  <li>Following</li>
+  <span class="shaded">0</span>
+</ul>
 </div>
 
+</div>
 
-  </section>
+<div>
 
+</div>
 
   <div class="flex-cont">
 
@@ -74,6 +92,7 @@
 
 
     </section>
+      </section>
   </div>
 
   <footer>

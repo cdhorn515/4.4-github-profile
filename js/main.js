@@ -6,8 +6,7 @@
     var orgsUrl = 'https://api.github.com/users/cdhorn515/orgs';
     //use github api token for development purposes
     //will not be present in production
-    var headers = {
-    };
+    var headers = {};
     //will be passed into the options object called headers, usually will be called headers as well. This var is passed in and will contain all of the header options you want in your fetch request
     if (GITHUB_TOKEN) {
       //set the AJAX header to send the token
@@ -15,18 +14,19 @@
     }
     var profileSection = document.getElementById('profile');
 
-// ***************************profile section
+    // ***************************profile section
     fetch(usernameUrl, {
       headers: headers
     }).then(function(response) {
       response.json().then(function(profile) {
-        console.log(profile);
+        // console.log(profile);
         displayProfile(profile);
       });
     });
 
     function displayProfile(profile) {
       var pic = document.createElement('div');
+      pic.setAttribute('class', 'profilepic');
       pic.innerHTML = '<img src = "' + profile.avatar_url + '">';
       profileSection.appendChild(pic);
       pic.style.height = "230px";
@@ -49,6 +49,7 @@
       var location = document.createElement('h5');
       location.textContent = profile.location;
       location.setAttribute('class', 'fa fa-map-marker sm');
+      location.setAttribute('style', 'margin-left: 5px');
       profileSection.appendChild(location);
 
       var emailSpan = document.createElement('p');
@@ -61,7 +62,8 @@
       emailSpan.appendChild(email);
 
       var faEnvelopeSpan = document.createElement('span');
-      email.setAttribute('class', 'fa fa-envelope-o')
+      email.setAttribute('class', 'fa fa-envelope-o');
+      email.setAttribute('style', 'margin-left: 5px');
       profileSection.appendChild(faEnvelopeSpan);
 
       var joined = document.createElement('h5');
@@ -74,7 +76,7 @@
       headers: headers
     }).then(function(res) {
       res.json().then(function(repos) {
-        console.log(repos);
+        // console.log(repos);
 
         for (var i = 0; i < repos.length; i++) {
           var repo = repos[i];
@@ -84,7 +86,7 @@
     });
     var repoSection = document.getElementById('repos');
     //display all repos
-    function displayRepo(repo){
+    function displayRepo(repo) {
       // outer container that holds all repo info
       var repoNode = document.createElement('div');
       repoNode.classList.add('repoInfoContainer');
@@ -101,52 +103,51 @@
       // circle.setAttribute('class', 'color-circle');
       repoNode.appendChild(coloredCircle);
 
-      if (repoLanguage === 'JavaScript'){
+      if (repoLanguage === 'JavaScript') {
         coloredCircle.style.backgroundColor = '#f1e05a';
       } else {
         if (repoLanguage === 'CSS') {
           coloredCircle.style.backggroundColor = '#563d7c';
         } else {
-        if (repoLanguage === 'HTML') {
-          coloredCircle.style.backgroundColor = '#563d7c';
-        } else {
-          coloredCircle.style.width = '12px';
-          coloredCircle.style.height = '12px';
+          if (repoLanguage === 'HTML') {
+            coloredCircle.style.backgroundColor = '#563d7c';
+          } else {
+            if (repoLanguage === 'PHP') {
+              coloredCircle.style.backgroundColor = '#4F5D95';
+            } else {
+              coloredCircle.style.width = '12px';
+              coloredCircle.style.height = '12px';
+            }
+          }
         }
       }
-    }
 
-      // anchor link for title of repo
-      var repoNameLink = document.createElement('a');
-      repoNameLink.href = repo.html_url;
-      repoNameLink.textContent = repo.name;
-      repoName.appendChild(repoNameLink);
-      // language node
-      var repoLanguage = document.createElement('span');
-      repoLanguage.classList.add('repoLangTxt');
-      repoLanguage.textContent = repo.language;
-      repoNode.appendChild(repoLanguage);
-      // displayed if there are forked repositories
+        // anchor link for title of repo
+        var repoNameLink = document.createElement('a');
+        repoNameLink.href = repo.html_url;
+        repoNameLink.textContent = repo.name;
+        repoName.appendChild(repoNameLink);
+        // language node
+        var repoLanguage = document.createElement('span');
+        repoLanguage.classList.add('repoLangTxt');
+        repoLanguage.textContent = repo.language;
+        repoNode.appendChild(repoLanguage);
+        // displayed if there are forked repositories
 
-      // var location = document.createElement('h5');
-      // location.textContent = profile.location;
-      // location.setAttribute('class', 'fa fa-map-marker sm');
-      // profileSection.appendChild(location);
-
-      var numOfForks = repo.forks;
-      if (numOfForks > 0) {
-      var forkedNode =  document.createElement('span');
-      forkedNode.setAttribute('class', 'fa fa-code-fork');
-      //  numOfForks.textContent = repo.forks;
-       repoNode.appendChild(forkedNode);
+        var numOfForks = repo.forks;
+        if (numOfForks > 0) {
+          var forkedNode = document.createElement('span');
+          forkedNode.setAttribute('class', 'fa fa-code-fork');
+          //  numOfForks.textContent = repo.forks;
+          repoNode.appendChild(forkedNode);
+        }
+        // latest update for repository
+        var repoUpdate = document.createElement('span');
+        repoLanguage.classList.add('repoLangTxt')
+        var lastUpdate = moment(repo.updated_at).fromNow();
+        repoUpdate.textContent = lastUpdate;
+        repoNode.appendChild(repoUpdate);
       }
-      // latest update for repository
-      var repoUpdate = document.createElement('span');
-      repoLanguage.classList.add('repoLangTxt')
-      var lastUpdate = moment(repo.updated_at).fromNow();
-      repoUpdate.textContent = lastUpdate;
-      repoNode.appendChild(repoUpdate);
-     }
 
 
       // repoDiv.innerHTML = `
@@ -158,13 +159,13 @@
 
 
 
-  // console.log(orgsUrl);
+      // console.log(orgsUrl);
 
-  // console.log(repoUrl);
+      // console.log(repoUrl);
 
-  // , {headers: myHeaders}).then(function(){
+      // , {headers: myHeaders}).then(function(){
 
 
-  // });
+      // });
 
-}());
+    }());

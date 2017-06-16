@@ -5,30 +5,72 @@
 }
 
 body{
+
+}
+/*-----------Navbar Header--------*/
+.topnav{
+  height: 55px;
+  width: 100%;
+  background-color: #000;
 }
 
-/*-----------Navbar Header--------*/
+.githublogo{
+  height: 40px;
+  width: 40px;
+  margin-left: 150px;
+  margin-right: 20px;
+  margin-top: 7.5px;
+  float: left;
+}
 
+#searchbox, .navbar-search{
+  float: left;
+  width: 300px;
+  margin-top: 10px;
+}
 
-ul li{
+#navlist{
   display: inline-block;
   float: left;
-  text-decoration: none;
-  color: #C8C9C4;
 }
 
+.toplinks{
+  color: #C8C9C4;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/*--------------------body top search*/
+
+.main-section{
+    margin-left: 110px;
+    margin-right: 110px;
+}
 .typeSelect, .langSelect{
   float: right;
 }
 
 #searchRepos{
+  clear: left;
   float: right;
   width: 380px;
 }
 
 .search-boxes{
+  float: right;
   margin-top: 20px;
 }
+
+.bodylinks{
+  display: inline-block;
+  clear: both;
+}
+
+li{
+  text-decoration: none;
+  display: inline-block;
+}
+/*---container for two flex ---------*/
 .flex-cont {
   display: flex;
   flex-flow: row nowrap;
@@ -37,6 +79,12 @@ ul li{
 
 .profile{
   flex-basis: 30%;
+}
+
+.profilepic>img{
+  height: 230px;
+  width: 230px;
+  border-radius: 6px;
 }
 
 .repos{
