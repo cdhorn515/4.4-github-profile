@@ -30,53 +30,63 @@
   </header>
   <!-- links under header and search box -->
   <section class="main-section">
-    <!-- <div class="top-search-section">
-      <div class="navbar-scroll"> -->
         <div class="search-boxes">
         <ul class="bodylinks">
-          <li>Overview</li>
+          <li class="firstli">Overview</li>
           <li>Repositories</li>
           <span class="shaded">38</span>
           <li>Stars</li>
-          <span class="shaded">0</span>
+          <span class="shaded ">0</span>
           <li>Followers</li>
           <span class="shaded">1</span>
           <li>Following</li>
           <span class="shaded">0</span>
         </ul>
-      <!-- </div> -->
 
-        <select class="form-inline typeSelect">Type: All
-  <option>All</option>
-  <option>Public</option>
-  <option>Private</option>
-  <option>Sources</option>
-  <option>Forks</option>
-  <option>Mirrors</option>
-  </select>
-        <select class="form-inline langSelect">Select Language
-    <option>All</option>
-    <option>CSS</option>
-    <option>HTML</option>
-    <option>JavaScript</option>
-    <option>PHP</option>
-  </select>
-        <form class="form-inline reposearch">
-          <div class="form-group">
-            <label for="searchRepos"></label>
-            <input type="text" class="form-control" id="searchRepos" placeholder="Search repositories...">
-          </div>
+    <!-- search form at top of page -->
+    <form class="form-inline reposearchCont">
+      <div class="form-group repoSearch">
+        <label for="searchRepos"></label>
+        <input type="text" class="form-control" id="searchRepos" placeholder="Search repositories...">
+      </div>
 
-      </form>
+    <select>
+      <optgroup class="typeSelect" label="Select Type">
+        <option value="typeSelect">Type: All</option>
+        <option value="typeSelect">Public</option>
+        <option value="typeSelect">Private</option>
+        <option value="typeSelect">Sources</option>
+        <option value="typeSelect">Forks</option>
+        <option value="typeSelect">Mirrors</option>
+      </optgroup>
+    </select>
+
+  <select>
+    <optgroup class="langSelect" label="Select language:">
+      <option value="typeSelect">Language: All</option>
+      <!-- <option value="typeSelect">All</option> -->
+      <option value="typeSelect">CSS</option>
+      <option value="typeSelect">HTML</option>
+      <option value="typeSelect">JavaScript</option>
+      <option value="typeSelect">PHP</option>
+    </optgroup>
+  </select>
+  </form>
 
     <!-- </div> -->
   </div>
     <div class="flex-cont">
-      <section class="col-2" id="profile">
+      <section class="col-2" >
+        <div class="profileInfo" id="profile">
+
+        </div>
+        <div class="organizationSection" id="organizations">
+
+        </div>
       </section>
       <section class="col-10" id="repos">
       </section>
-  </section>
+
   </div>
   <footer>
     <span><i class="fa fa-copyright" aria-hidden="true"></i>2017 GitHub, Inc.</span>

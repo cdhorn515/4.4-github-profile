@@ -3,7 +3,7 @@
     'use strict';
     var usernameUrl = 'https://api.github.com/users/cdhorn515';
     var repoUrl = 'https://api.github.com/users/cdhorn515/repos?sort=updated';
-    var orgsUrl = 'https://api.github.com/users/cdhorn515/orgs';
+    var orgsUrl = 'https://api.github.com/user/orgs';
     //use github api token for development purposes
     //will not be present in production
     var headers = {};
@@ -49,7 +49,7 @@
 
       var location = document.createElement('h5');
       location.textContent = profile.location;
-      location.setAttribute('class', 'fa fa-map-marker sm');
+      location.setAttribute('class', 'fa fa-map-marker fa-lg');
       location.setAttribute('style', 'margin-left: 5px');
       profileSection.appendChild(location);
 
@@ -57,13 +57,13 @@
       profileSection.appendChild(emailSpan);
 
       var email = document.createElement('a');
-      email.setAttribute('class', 'fa fa-envelope-o sm');
+      // email.setAttribute('class', 'fa fa-envelope-o sm');
       email.href = profile.email;
       email.textContent = profile.email;
       emailSpan.appendChild(email);
 
       var faEnvelopeSpan = document.createElement('span');
-      email.setAttribute('class', 'fa fa-envelope-o');
+      email.setAttribute('class', 'fa fa-envelope-o fa-lg');
       email.setAttribute('style', 'margin-left: 5px');
       profileSection.appendChild(faEnvelopeSpan);
 
@@ -77,7 +77,7 @@
       headers: headers
     }).then(function(res) {
       res.json().then(function(repos) {
-        // console.log(repos);
+        console.log(repos);
 
         for (var i = 0; i < repos.length; i++) {
           var repo = repos[i];
@@ -85,6 +85,8 @@
         }
       });
     });
+
+
     var repoSection = document.getElementById('repos');
     //display all repos
     function displayRepo(repo) {
@@ -99,11 +101,13 @@
       // circle beside language
       var repoLanguage = repo.language;
 
+var languageContainerNode = document.createElement('div');
+languageContainerNode.classList.add('info-cont');
+repoNode.appendChild(languageContainerNode);
+
       var coloredCircle = document.createElement('div');
       coloredCircle.classList.add('color-circle');
-      // circle.setAttribute('class', 'color-circle');
-      repoNode.appendChild(coloredCircle);
-
+      languageContainerNode.appendChild(coloredCircle);
       if (repoLanguage === 'JavaScript') {
         coloredCircle.style.backgroundColor = '#f1e05a';
       } else {
@@ -132,25 +136,56 @@
         var repoLanguage = document.createElement('span');
         repoLanguage.classList.add('repoLangTxt');
         repoLanguage.textContent = repo.language;
-        repoNode.appendChild(repoLanguage);
+        languageContainerNode.appendChild(repoLanguage);
         // displayed if there are forked repositories
 
-        var numOfForks = repo.forks;
-        if (numOfForks > 0) {
-          var forkedNode = document.createElement('span');
-          forkedNode.setAttribute('class', 'fa fa-code-fork');
-          //  numOfForks.textContent = repo.forks;
-          repoNode.appendChild(forkedNode);
-        }
+      //   var numOfForks = repo.forks;
+      //   console.log('here: ', numOfForks);
+      // numOfForks = parseInt(numOfForks);
+      //   if (numOfForks > 0) {
+      //     var forkedNode = document.createElement('span');
+      //     forkedNode.setAttribute('class', 'fa fa-code-fork fa-lg repoLangTxt');
+      //     numOfForks = numOfForks.toString();
+      //      numOfForks.innerHTML = numOfForks;
+      //     languageContainerNode.appendChild(forkedNode);
+      //   }
         // latest update for repository
         var repoUpdate = document.createElement('span');
         repoLanguage.classList.add('repoLangTxt')
         var lastUpdate = moment(repo.updated_at).fromNow();
         repoUpdate.textContent = lastUpdate;
-        repoNode.appendChild(repoUpdate);
+        languageContainerNode.appendChild(repoUpdate);
       }
+// --------------Orgs call
 
 
+fetch(orgsUrl, {
+    headers: headers
+  }).then(function(res) {
+  res.json().then(function(orgs) {
+    console.log('orgs: ', orgs);
+    for (var i = 0; i < orgs.length; i++) {
+      var orgs = orgs[i];
+      displayOrgs(orgs);
+    }
+  })
+});
+var organizationNode = document.getElementById('organizations');
+
+function displayOrgs(orgs){
+  var organizationHeadingNode = document.createElement('h3');
+  organizationHeadingNode.setAttribute('class', 'organization');
+  organizationHeadingNode.textContent = "Organizations";
+  organizationNode.appendChild(organizationHeadingNode);
+
+  var organizationAvatarNode = document.createElement('div');
+  organizationAvatarNode.setAttribute('class', 'orgavatar');
+  organizationAvatarNode.innerHTML = '<img src = "' + orgs.avatar_url + '">';
+  organizationHeadingNode.appendChild(organizationAvatarNode);
+}
+// pic.style.height = "230px";
+// pic.style.width = "230px";
+// pic.style.borderRadius = "5px";
       // repoDiv.innerHTML = `
       //   <span>
       //    ${repo.name}
