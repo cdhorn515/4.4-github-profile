@@ -139,16 +139,15 @@ repoNode.appendChild(languageContainerNode);
         languageContainerNode.appendChild(repoLanguage);
         // displayed if there are forked repositories
 
-      //   var numOfForks = repo.forks;
-      //   console.log('here: ', numOfForks);
+        var numOfForks = repo.forks;
+        console.log('here: ', numOfForks);
       // numOfForks = parseInt(numOfForks);
-      //   if (numOfForks > 0) {
-      //     var forkedNode = document.createElement('span');
-      //     forkedNode.setAttribute('class', 'fa fa-code-fork fa-lg repoLangTxt');
-      //     numOfForks = numOfForks.toString();
-      //      numOfForks.innerHTML = numOfForks;
-      //     languageContainerNode.appendChild(forkedNode);
-      //   }
+        if (numOfForks > 0) {
+          var forkedNode = document.createElement('span');
+          forkedNode.innerHTML = numOfForks;
+          forkedNode.setAttribute('class', 'fa fa-code-fork fa-lg repoLangTxt');
+          languageContainerNode.appendChild(forkedNode);
+        }
         // latest update for repository
         var repoUpdate = document.createElement('span');
         repoLanguage.classList.add('repoLangTxt')
