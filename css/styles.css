@@ -52,11 +52,11 @@ header{
   width: 26px;
 
 }
-.toplinks{
-  color: #C8C9C4;
+.toplinks>a{
+  color: rgba(255,255,255,0.75);
   text-decoration: none;
   display: inline-block;
-  /*padding-top: 17px;*/
+  font-weight: bold;
   height: line-height;
 }
 .repoicon{
@@ -72,11 +72,18 @@ header{
   margin-right: 110px;
   width: 51%;
   border-bottom: 1px solid #E1E4E8;
-  padding-bottom: 20px;
 }
 
+.bodylilinks>a{
+  color: #586069;
+}
 ul{
   margin-bottom: 3px;
+}
+
+.repositorieslink{
+  border-bottom: 2px solid #E36209;
+  padding-bottom: 20px;
 }
 
 .main-section{

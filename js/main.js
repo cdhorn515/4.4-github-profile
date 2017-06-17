@@ -8,10 +8,17 @@
     //will not be present in production
     var headers = {};
     //will be passed into the options object called headers, usually will be called headers as well. This var is passed in and will contain all of the header options you want in your fetch request
-    if (GITHUB_TOKEN) {
+    // if (GITHUB_TOKEN)
+
+
+
+    try {
       //set the AJAX header to send the token
-      headers.Authorization = 'token ' + GITHUB_TOKEN;
+      headers.Authorization = 'token ' + GET_TOKEN;
+    } catch (e) {
+      //ignore error
     }
+
     var profileSection = document.getElementById('profile');
 
     // ***************************profile section
@@ -59,7 +66,8 @@
       var email = document.createElement('a');
       // email.setAttribute('class', 'fa fa-envelope-o sm');
       email.href = profile.email;
-      email.textContent = profile.email;
+      email.textContent = ' cdhorn515@gmail.com';
+      // email.textContent = profile.email;
       emailSpan.appendChild(email);
 
       var faEnvelopeSpan = document.createElement('span');
