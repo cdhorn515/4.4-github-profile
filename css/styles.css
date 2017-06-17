@@ -4,10 +4,10 @@
   padding: 0;
 }
 
-body{
-
-}
 /*-----------Navbar Header--------*/
+header{
+  display: inline-block;
+}
 .topnav{
   height: 55px;
   width: 100%;
@@ -36,11 +36,28 @@ body{
   float: left;
 }
 
+.navbar-right{
+  margin-right: 80px;
+  padding-top:
+}
+
+.inverted{
+  filter: invert;
+  background-color: #000;
+  border: none;
+}
+
+.tinyProfilePic{
+  height: 26px;
+  width: 26px;
+
+}
 .toplinks{
   color: #C8C9C4;
   text-decoration: none;
   display: inline-block;
-  padding-top: 17px;
+  /*padding-top: 17px;*/
+  height: line-height;
 }
 .repoicon{
   height: 16px;
@@ -82,12 +99,10 @@ ul{
   float: right;
   width: 100%;
   position: absolute;
-  /*parallax?*/
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: 325px;
   margin-right: 110px;
-  /*border-bottom: 1px solid #E1E4E8;*/
 }
 
 .shaded{
@@ -134,15 +149,19 @@ li{
   border-radius: 6px;
 }
 /*-------------organization div*/
+#organizations{
+  border-top: 1px solid #E1E4E8;
+  width: 90%;
+}
+
 .organization{
   font-size: 18px;
   font-weight: bold;
   padding-bottom: 10px;
 }
 
-#organizations{
-  border-top: 1px solid #E1E4E8;
-  width: 90%;
+.orgavatar{
+  padding-top: 10px;
 }
 
 .orgavatar>img{
@@ -212,12 +231,13 @@ footer{
   font-size: 15px;
 }
 footer>ul>li{
-  color: #border-bottom: 1px solid #E1E4E8;
+  color: #0382DE;
 }
 
 .footericon{
   margin-left: 100px;
   margin-right: 100px;
+
 }
 
 .footer{
