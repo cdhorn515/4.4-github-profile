@@ -50,29 +50,42 @@
         <input type="text" class="form-control" id="searchRepos" placeholder="Search repositories...">
       </div>
 
-    <select>
-      <optgroup class="typeSelect" label="Select Type">
-        <option value="typeSelect">Type: All</option>
-        <option value="typeSelect">Public</option>
-        <option value="typeSelect">Private</option>
-        <option value="typeSelect">Sources</option>
-        <option value="typeSelect">Forks</option>
-        <option value="typeSelect">Mirrors</option>
-      </optgroup>
-    </select>
+    <div class="btn-group typeSelect">
+      <button class="btn btn-default dropdown-toggle" type="button" id="typeDropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Type: <b>All</b>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li>Select type:</li>
+        <li>All</li>
+        <li role="separator" class="divider"></li>
+        <li>Public</li>
+        <li>Private</li>
+        <li>Sources</li>
+        <li>Forks</li>
+        <li>Mirrors</li>
+      </ul>
+    </div>
 
-  <select>
-    <optgroup class="langSelect" label="Select language:">
-      <option value="typeSelect">Language: All</option>
-      <!-- <option value="typeSelect">All</option> -->
-      <option value="typeSelect">CSS</option>
-      <option value="typeSelect">HTML</option>
-      <option value="typeSelect">JavaScript</option>
-      <option value="typeSelect">PHP</option>
-    </optgroup>
-  </select>
+    <div class="btn-group langSelect">
+      <button class="btn btn-default dropdown-toggle" type="button" id="typeDropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Language: <b>All</b>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li>Select language:</li>
+        <li role="separator" class="divider"></li>
+        <li>All</li>
+        <li>HTML</li>
+        <li>JavaScript</li>
+        <li>PHP</li>
+      </ul>
+
+    </div>
+
   <button type="button" class="btn btn-success"><img class="repoicon" src="pics/repositoryicon.png" alt="book icon"> New</button>
   </form>
+
 
     <!-- </div> -->
   </div>
@@ -91,21 +104,21 @@
   </div>
   <footer>
     <span><i class="fa fa-copyright" aria-hidden="true"></i>2017 GitHub, Inc.</span>
-    <ul>
-      <li>Terms</li>
-      <li>Privacy</li>
-      <li>Security</li>
-      <li>Status</li>
-      <li>Help</li>
-    </ul>
-    <span><i class="fa fa-github" aria-hidden="true"></i></span>
     <ul class='footer'>
-      <li class='footer-info'>Contact Github</li>
-      <li class='footer-info'>API</li>
-      <li class='footer-info'>Training</li>
-      <li class='footer-info'>Shop</li>
-      <li class='footer-info'>Blog</li>
-      <li class='footer-info'>About</li>
+      <li class='footer-info' href="https://help.github.com/site/terms">Terms</li>
+      <li class='footer-info' href="https://help.github.com/site/privacy">Privacy</li>
+      <li class='footer-info' href="https://github.com/security">Security</li>
+      <li class='footer-info' href="https://status.github.com">Status</li>
+      <li class='footer-info' href="https://help.github.com">Help</li>
+    </ul>
+    <span class="footericon"><i class="fa fa-github fa-3x footer" aria-hidden="true"></i></span>
+    <ul class='footer'>
+      <li class='footer-info' href="https://github.com/contact">Contact Github</li>
+      <li class='footer-info' href="https://developer.github.com">API</li>
+      <li class='footer-info' href="https://training.github.com">Training</li>
+      <li class='footer-info' href="https://shop.github.com">Shop</li>
+      <li class='footer-info' href="https://github.com/blog">Blog</li>
+      <li class='footer-info' href="https://github.com/about">About</li>
     </ul>
   </footer>
   <script type="text/javascript" src="js/moment.min.js"></script>
