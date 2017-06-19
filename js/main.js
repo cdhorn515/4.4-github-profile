@@ -65,7 +65,7 @@
 
       var email = document.createElement('a');
       // email.setAttribute('class', 'fa fa-envelope-o sm');
-      email.href = profile.email;
+      email.href = 'mailto:cdhorn515@gmail.com';
       email.textContent = profile.email;
       emailSpan.appendChild(email);
 
