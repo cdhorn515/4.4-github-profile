@@ -64,6 +64,7 @@
       var emailSpan = document.createElement('p');
       // create anchor tag
       var email = document.createElement('a');
+      // console.log('profile', profile.email);
       email.href = 'mailto:' + profile.email;
       email.textContent = profile.email;
 
