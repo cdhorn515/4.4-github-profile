@@ -14,7 +14,7 @@
 
     try {
       //set the AJAX header to send the token
-      headers.Authorization = 'token ' + GET_TOKEN;
+      headers.Authorization = 'token ' + GITHUB_TOKEN;
     } catch (e) {
       //ignore error
     }
@@ -66,8 +66,7 @@
       var email = document.createElement('a');
       // email.setAttribute('class', 'fa fa-envelope-o sm');
       email.href = profile.email;
-      email.textContent = ' cdhorn515@gmail.com';
-      // email.textContent = profile.email;
+      email.textContent = profile.email;
       emailSpan.appendChild(email);
 
       var faEnvelopeSpan = document.createElement('span');
