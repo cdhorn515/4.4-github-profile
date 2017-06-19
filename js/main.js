@@ -72,7 +72,7 @@
       var faEnvelopeSpan = document.createElement('span');
       email.setAttribute('class', 'fa fa-envelope-o fa-lg');
       email.setAttribute('style', 'margin-left: 5px');
-      profileSection.appendChild(faEnvelopeSpan);
+      emailSpan.appendChild(faEnvelopeSpan);
 
       var joined = document.createElement('h5');
       var memberSince = moment(profile.created_at).format('MMMM Do YYYY');
