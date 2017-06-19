@@ -3,7 +3,7 @@
     'use strict';
     var usernameUrl = 'https://api.github.com/users/cdhorn515';
     var repoUrl = 'https://api.github.com/users/cdhorn515/repos?sort=updated';
-    var orgsUrl = 'https://api.github.com/user/orgs';
+    var orgsUrl = 'https://api.github.com/users/cdhorn515/orgs';
     //use github api token for development purposes
     //will not be present in production
     var headers = {};
@@ -60,15 +60,17 @@
       location.setAttribute('style', 'margin-left: 5px');
       profileSection.appendChild(location);
 
+      // create p element
       var emailSpan = document.createElement('p');
+      // create anchor tag
+      var email = document.createElement('a');
+      email.href = 'mailto:' + profile.email;
+      email.textContent = profile.email;
+
+      emailSpan.appendChild(email);
+
       profileSection.appendChild(emailSpan);
 
-      var email = document.createElement('a');
-      // email.setAttribute('class', 'fa fa-envelope-o sm');
-      email.href = 'mailto:cdhorn515@gmail.com';
-      console.log('here', profile.email);
-      email.textContent = profile.email;
-      emailSpan.appendChild(email);
 
       var faEnvelopeSpan = document.createElement('span');
       email.setAttribute('class', 'fa fa-envelope-o fa-lg');
